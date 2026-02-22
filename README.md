@@ -16,7 +16,6 @@
   <img src="https://img.shields.io/badge/Tailwind_CSS-4.2-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="TailwindCSS" />
   <img src="https://img.shields.io/badge/Framer_Motion-12-FF0099?style=flat-square&logo=framer&logoColor=white" alt="Framer Motion" />
   <img src="https://img.shields.io/badge/Node.js-20+-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js" />
-  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License" />
 </p>
 
 <p align="center">
@@ -25,17 +24,20 @@
   <a href="#user-flow">User Flow</a> &bull;
   <a href="#tech-stack">Tech Stack</a> &bull;
   <a href="#getting-started">Getting Started</a> &bull;
-  <a href="#api-reference">API</a> &bull;
-  <a href="#roadmap">Roadmap</a>
+  <a href="#api-reference">API</a>
 </p>
 
 ---
 
-## The Idea
+## Why I Built This
 
-The Memory Palace technique, also known as the *Method of Loci*, has been used by scholars for thousands of years to organize and recall vast amounts of information by placing concepts within a mental architectural space.
+When I first watched Sherlock Holmes, the thing that fascinated me the most wasn't the deductions or the crime-solving -- it was the **Memory Palace**. The way Sherlock could walk through an imaginary architectural space inside his mind, placing memories in rooms and recalling them effortlessly by simply revisiting those rooms, felt like a superpower.
 
-**Memory Palace** brings this ancient technique into the modern age. Upload any document, paste any text, or type any topic -- and watch AI instantly decompose it into a richly detailed, interactive mind map or structured flowchart you can zoom, pan, explore, and export.
+That stuck with me.
+
+I realized that mind maps are, in a way, your own kind of Memory Palace. They let you take something impossibly complex -- a 50-page research paper, an entire semester of notes, a sprawling topic you're trying to learn -- and break it down into a spatial structure you can actually *navigate*. You're not just reading linearly anymore. You're walking through your knowledge.
+
+So I built this. Upload any document, paste any text, or just type a topic -- and Memory Palace instantly decomposes it into a richly detailed, interactive mind map or a structured flowchart that you can zoom into, pan around, explore, and export. It's the closest thing I could build to giving everyone their own Sherlock-style Memory Palace.
 
 ---
 
@@ -49,61 +51,12 @@ The Memory Palace technique, also known as the *Method of Loci*, has been used b
 | **URL Parsing** | Paste any URL. Memory Palace scrapes the page content, strips boilerplate, and generates a mind map from the extracted text. |
 | **Interactive Zoom & Pan** | Both mind maps (via Markmap) and flowcharts (via Mermaid + react-zoom-pan-pinch) support full mouse-wheel zoom and click-drag panning. |
 | **SVG Export** | One-click export of your generated diagram as a crisp, infinitely scalable SVG vector file. |
-| **Cinematic Landing Page** | A 240-frame scrollytelling animation sequence with scroll-synced narrative overlays, premium Outfit typography, and a floating cinematic canvas. |
+| **Cinematic Landing Page** | A 240-frame scrollytelling animation sequence with scroll-synced narrative overlays and premium typography. |
 | **Cloud & Local AI** | Toggle between cloud LLM providers (Groq, Gemini) or a local Ollama instance with a single click. |
-| **Responsive Design** | Fully responsive across desktop and mobile viewports. |
 
 ---
 
 ## Architecture
-
-```
-+------------------------------------------------------------------+
-|                        MEMORY PALACE                              |
-+------------------------------------------------------------------+
-|                                                                    |
-|  +---------------------------+    +----------------------------+  |
-|  |        FRONTEND           |    |         BACKEND            |  |
-|  |     (React + Vite)        |    |     (Express + Node)       |  |
-|  |                           |    |                            |  |
-|  |  +---------------------+  |    |  +----------------------+  |  |
-|  |  |   Landing Page      |  |    |  |    API Router        |  |  |
-|  |  |  (Scrollytelling    |  |    |  |  /api/mindmaps/      |  |  |
-|  |  |   240-frame Canvas) |  |    |  |    generate          |  |  |
-|  |  +---------------------+  |    |  +----------+-----------+  |  |
-|  |                           |    |             |              |  |
-|  |  +---------------------+  |    |  +----------v-----------+  |  |
-|  |  |   Mindmap Page      |  |    |  |   Input Handler      |  |  |
-|  |  |                     |  |    |  |                      |  |  |
-|  |  |  +---------------+  |  |    |  |  - Text passthrough  |  |  |
-|  |  |  | MarkmapViz    |  |  |    |  |  - URL scraping      |  |  |
-|  |  |  | (Mind Maps)   |  |  |    |  |  - PDF parsing       |  |  |
-|  |  |  +---------------+  |  |    |  |  - DOCX parsing      |  |  |
-|  |  |                     |  |    |  |  - PPTX parsing      |  |  |
-|  |  |  +---------------+  |  |    |  +----------+-----------+  |  |
-|  |  |  | MermaidViz    |  |  |    |             |              |  |
-|  |  |  | (Flowcharts)  |  |  |    |  +----------v-----------+  |  |
-|  |  |  +---------------+  |  |    |  |   LLM Factory        |  |  |
-|  |  |                     |  |    |  |                      |  |  |
-|  |  |  +---------------+  |  |    |  |  +----------------+  |  |  |
-|  |  |  | SVG Export    |  |  |    |  |  | Groq Provider  |  |  |  |
-|  |  |  +---------------+  |  |    |  |  +----------------+  |  |  |
-|  |  +---------------------+  |    |  |  | Gemini Provider|  |  |  |
-|  |                           |    |  |  +----------------+  |  |  |
-|  +---------------------------+    |  |  | Ollama Provider|  |  |  |
-|                                   |  |  +----------------+  |  |  |
-|                                   |  +----------+-----------+  |  |
-|                                   |             |              |  |
-|                                   |  +----------v-----------+  |  |
-|                                   |  |   Prompt Factory      |  |  |
-|                                   |  |  (Mindmap / Flowchart |  |  |
-|                                   |  |   prompt templates)   |  |  |
-|                                   |  +----------------------+  |  |
-|                                   +----------------------------+  |
-+------------------------------------------------------------------+
-```
-
-### Architecture Diagram (Mermaid)
 
 ```mermaid
 graph TB
@@ -212,14 +165,12 @@ graph TD
 | **Mermaid.js** | Flowchart and process diagram rendering |
 | **react-zoom-pan-pinch** | Touch and mouse zoom/pan for flowcharts |
 | **Lucide React** | Premium icon library |
-| **Axios** | HTTP client for API communication |
 
 ### Backend
 
 | Technology | Purpose |
 |:-----------|:--------|
 | **Express 5** | HTTP server and API routing |
-| **TypeScript** | Strict typing across the server |
 | **Groq SDK** | Lightning-fast Llama 3 inference |
 | **Google Generative AI** | Gemini model integration |
 | **Ollama** | Self-hosted local LLM support |
@@ -340,110 +291,6 @@ Generate a mind map or flowchart from text, URL, or uploaded document.
   }
 }
 ```
-
----
-
-## Project Structure
-
-```
-MemoryPalace/
-├── backend/
-│   ├── src/
-│   │   ├── index.ts                    # Express server entry point
-│   │   ├── routes/
-│   │   │   └── api.ts                  # API route definitions
-│   │   └── services/
-│   │       ├── input/
-│   │       │   └── InputHandler.ts     # Text, URL, and document parsing
-│   │       └── llm/
-│   │           ├── LLMProvider.ts      # Provider interface
-│   │           ├── LLMFactory.ts       # Auto-select best provider
-│   │           ├── GroqProvider.ts     # Groq (Llama 3) integration
-│   │           ├── GeminiProvider.ts   # Google Gemini integration
-│   │           ├── OllamaProvider.ts   # Local Ollama integration
-│   │           └── PromptFactory.ts    # Mindmap/Flowchart prompt templates
-│   ├── package.json
-│   └── tsconfig.json
-│
-├── frontend/
-│   ├── public/
-│   │   └── ezgif-frame-*.jpg          # 240 cinematic animation frames
-│   ├── src/
-│   │   ├── App.tsx                     # Router configuration
-│   │   ├── main.tsx                    # React entry point
-│   │   ├── components/
-│   │   │   ├── MarkmapViz.tsx          # Interactive mind map renderer
-│   │   │   ├── MermaidViz.tsx          # Flowchart renderer with zoom/pan
-│   │   │   └── landing/
-│   │   │       ├── ScrollytellingSequence.tsx  # 240-frame canvas animation
-│   │   │       └── NarrativeOverlay.tsx        # Scroll-synced text overlays
-│   │   └── pages/
-│   │       ├── Landing.tsx             # Landing page
-│   │       └── Mindmap.tsx             # Generation page
-│   ├── index.html
-│   ├── package.json
-│   └── tsconfig.json
-│
-├── .gitignore
-└── README.md
-```
-
----
-
-## LLM Provider Priority
-
-Memory Palace automatically selects the best available AI provider:
-
-```
-1. Groq (Llama 3)     -- Fastest inference, preferred
-2. Google Gemini       -- Fallback cloud provider
-3. Ollama (Local)      -- Offline, self-hosted models (toggle with "Local Mode")
-```
-
-If `forceLocal` is enabled, the system bypasses cloud providers entirely and routes directly to your local Ollama instance.
-
----
-
-## The Landing Experience
-
-The landing page is a cinematic scrollytelling experience inspired by the Roman Memory Palace metaphor:
-
-- **240 pre-rendered frames** are loaded into memory and drawn to a hardware-accelerated Canvas element
-- **Scroll position directly maps to frame index**, creating a buttery-smooth animation as the user scrolls
-- **Narrative text overlays** fade in and out at precise scroll thresholds using Framer Motion spring physics
-- The canvas floats as a premium bordered rectangle, centered on a pure black void
-- **Outfit** font family delivers a clean, modern tech aesthetic across all headlines
-
----
-
-## Roadmap
-
-- [ ] PNG and PDF export (in addition to SVG)
-- [ ] Editable mind map nodes (click-to-edit text)
-- [ ] Shareable links for generated diagrams
-- [ ] Diagram history and saved sessions
-- [ ] Collaborative real-time editing
-- [ ] Dark mode for the generation page
-- [ ] Mobile-optimized touch gestures
-- [ ] Additional LLM providers (Claude, OpenAI)
-
----
-
-## Contributing
-
-Contributions are welcome. Please open an issue or submit a pull request.
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feat/your-feature`
-3. Commit your changes: `git commit -m "feat: add your feature"`
-4. Push to the branch: `git push origin feat/your-feature`
-5. Open a Pull Request
-
----
-
-## License
-
-This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
 
 ---
 
