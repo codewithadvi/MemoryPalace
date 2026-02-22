@@ -31,13 +31,11 @@
 
 ## Why I Built This
 
-When I first watched Sherlock Holmes, the thing that fascinated me the most wasn't the deductions or the crime-solving -- it was the **Memory Palace**. The way Sherlock could walk through an imaginary architectural space inside his mind, placing memories in rooms and recalling them effortlessly by simply revisiting those rooms, felt like a superpower.
+Sherlock Holmes had his Memory Palace -- an architectural space in his mind where he could store and retrieve anything instantly. That concept always stuck with me.
 
-That stuck with me.
+Mind maps are essentially the same idea. You take something dense -- a research paper, a lecture, some topic you're trying to learn -- and lay it out spatially so you can actually see how everything connects instead of reading it linearly.
 
-I realized that mind maps are, in a way, your own kind of Memory Palace. They let you take something impossibly complex -- a 50-page research paper, an entire semester of notes, a sprawling topic you're trying to learn -- and break it down into a spatial structure you can actually *navigate*. You're not just reading linearly anymore. You're walking through your knowledge.
-
-So I built this. Upload any document, paste any text, or just type a topic -- and Memory Palace instantly decomposes it into a richly detailed, interactive mind map or a structured flowchart that you can zoom into, pan around, explore, and export. It's the closest thing I could build to giving everyone their own Sherlock-style Memory Palace.
+Memory Palace does this automatically. Drop in a document, paste some text, or type a topic. AI breaks it down into a detailed, interactive mind map or flowchart you can zoom, pan, and export.
 
 ---
 
