@@ -31,11 +31,7 @@
 
 ## Why I Built This
 
-Sherlock Holmes had his Memory Palace -- an architectural space in his mind where he could store and retrieve anything instantly. That concept always stuck with me.
-
-Mind maps are essentially the same idea. You take something dense -- a research paper, a lecture, some topic you're trying to learn -- and lay it out spatially so you can actually see how everything connects instead of reading it linearly.
-
-Memory Palace does this automatically. Drop in a document, paste some text, or type a topic. AI breaks it down into a detailed, interactive mind map or flowchart you can zoom, pan, and export.
+Like Sherlock Holmes, who arranged his thoughts in a memory palace of perfectly placed clues, I built this mind-mapping tool to give ideas their own rooms, so clarity is never lost and insight is always within reach.
 
 ---
 
