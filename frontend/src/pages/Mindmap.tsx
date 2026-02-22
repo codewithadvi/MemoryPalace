@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Home, Loader2, Server, Upload, Download, FileText, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { ScrollytellingSequence } from '../components/landing/ScrollytellingSequence';
 import { NarrativeOverlay } from '../components/landing/NarrativeOverlay';
 
