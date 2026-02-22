@@ -16,3 +16,6 @@ pnpm-debug.log*
 *.ntvs*
 *.njsproj
 *.sln
+requirements.md
+design.md
+tasks.md
