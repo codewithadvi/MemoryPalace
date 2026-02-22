@@ -18,8 +18,7 @@ export default function Mindmap() {
 
     const fileInputRef = useRef<HTMLInputElement>(null);
 
-    // Backend should be on port 3000 locally
-    const API_URL = 'http://localhost:3000/api/mindmaps/generate';
+    const API_URL = `${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/mindmaps/generate`;
 
     const handleGenerate = async () => {
         if (!topic.trim() && !file) return;
